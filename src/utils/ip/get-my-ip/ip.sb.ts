@@ -2,9 +2,9 @@ import { validateIPv4, validateIPv6 } from "../common/validate";
 
 export const serverName = "ip.sb";
 
-export async function getMyIPv4(): Promise<string> {
+export async function getMyIPv4(options?: RequestInit): Promise<string> {
   const api = "https://api-ipv4.ip.sb/geoip";
-  const response = await fetch(api);
+  const response = await fetch(api, options);
   const data = await response.json();
   const ip = data.ip;
   if (!validateIPv4(ip)) {
@@ -14,9 +14,9 @@ export async function getMyIPv4(): Promise<string> {
   return ip;
 }
 
-export async function getMyIPv6(): Promise<string> {
+export async function getMyIPv6(options?: RequestInit): Promise<string> {
   const api = "https://api-ipv6.ip.sb/geoip";
-  const response = await fetch(api);
+  const response = await fetch(api, options);
   const data = await response.json();
   const ip = data.ip;
   if (!validateIPv6(ip)) {
