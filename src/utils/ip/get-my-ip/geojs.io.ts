@@ -1,17 +1,29 @@
+import { validateIPv4, validateIPv6 } from "../common/validate";
+
 export const serverName = "geojs.io";
 
 export async function getMyIPv4(): Promise<string> {
   const api = "https://ipv4.geojs.io/v1/ip.json";
   const response = await fetch(api);
   const data = await response.json();
-  return data.ip;
+  const ip = data.ip;
+  if (!validateIPv4(ip)) {
+    throw new Error(`Invalid IPv4: ${ip}`);
+  }
+
+  return ip;
 }
 
 export async function getMyIPv6(): Promise<string> {
   const api = "https://ipv6.geojs.io/v1/ip.json";
   const response = await fetch(api);
   const data = await response.json();
-  return data.ip;
+  const ip = data.ip;
+  if (!validateIPv6(ip)) {
+    throw new Error(`Invalid IPv4: ${ip}`);
+  }
+
+  return ip;
 }
 
 export const getMyIP = {
