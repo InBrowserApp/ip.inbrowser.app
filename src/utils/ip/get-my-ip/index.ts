@@ -1,6 +1,7 @@
 import IPSB from "./ip.sb";
 import GEOJSIO from "./geojs.io";
 import Cloudflare from "./cloudflare";
+import IPIFY from "./ipify.org";
 
 type getIPFunction = (options?: { signal: AbortSignal }) => Promise<string>;
 interface GetMyIPProvider {
@@ -9,7 +10,12 @@ interface GetMyIPProvider {
   name: string;
 }
 
-export const getMyIPProviders: GetMyIPProvider[] = [IPSB, GEOJSIO, Cloudflare];
+export const getMyIPProviders: GetMyIPProvider[] = [
+  IPSB,
+  GEOJSIO,
+  Cloudflare,
+  IPIFY,
+];
 
 export const getMyIPv4 = async (): Promise<string> => {
   const controller = new AbortController();
