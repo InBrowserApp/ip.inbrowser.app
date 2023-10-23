@@ -1,6 +1,6 @@
 import { validateIPv4, validateIPv6 } from "../common/validate";
 
-export const serverName = "GeoJS";
+export const name = "GeoJS";
 
 export async function getMyIPv4(options?: RequestInit): Promise<string> {
   const api = "https://ipv4.geojs.io/v1/ip.json";
@@ -29,7 +29,7 @@ export async function getMyIPv6(options?: RequestInit): Promise<string> {
 export const getMyIP = {
   ipv4: getMyIPv4,
   ipv6: getMyIPv6,
-  name: serverName,
+  name: name,
 };
 
 export default getMyIP;
