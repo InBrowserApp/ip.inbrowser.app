@@ -1,4 +1,5 @@
 import IPSB from "./ip.sb";
+import GEOJSIO from "./geojs.io";
 
 interface GetMyIPProvider {
   ipv4?: () => Promise<string>;
@@ -6,7 +7,7 @@ interface GetMyIPProvider {
   name: string;
 }
 
-export const getMyIPProviders: GetMyIPProvider[] = [IPSB];
+export const getMyIPProviders: GetMyIPProvider[] = [IPSB, GEOJSIO];
 
 export const getMyIPv4 = async (): Promise<string> => {
   const ipv4Functions = getMyIPProviders
