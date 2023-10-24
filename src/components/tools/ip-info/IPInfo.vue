@@ -96,7 +96,9 @@ onMounted(async () => {
       (async () => {
         const result = await provider.getIPInfo(props.ip);
         for (const [key, value] of Object.entries(result)) {
+          // @ts-ignore
           if (info.value?.[key] === undefined) {
+            // @ts-ignore
             info.value[key] = value;
           }
         }
@@ -121,7 +123,9 @@ onMounted(async () => {
   ];
 
   for (const key of fillNullKeys) {
+    // @ts-ignore
     if (info.value?.[key] === undefined) {
+      // @ts-ignore
       info.value[key] = null;
     }
   }
