@@ -1,8 +1,8 @@
 <template>
   <main>
     <BackToHome />
-    <n-h2 prefix="bar" align-text>My IP Address</n-h2>
-    {{ ip }}
+    <n-h2 prefix="bar" align-text>IP Info - {{ ip }}</n-h2>
+    <IPInfo :ip="ip" />
   </main>
 </template>
 
@@ -12,9 +12,10 @@ import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
+import IPInfo from "@/components/tools/ip-info/IPInfo.vue";
 
 const route = useRoute();
-const ip = computed(() => route.params.ip);
+const ip = computed(() => route.params.ip as string);
 
 useHead(
   computed(() => ({
