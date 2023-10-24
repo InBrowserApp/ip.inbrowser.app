@@ -1,6 +1,10 @@
 <template>
   <n-input-group>
-    <n-input placeholder="IPv4 / IPv6 / Domain" v-model:value="value" />
+    <n-input
+      placeholder="IPv4 / IPv6 / Domain"
+      v-model:value="value"
+      @keydown.enter="goToIPInfo"
+    />
     <n-button ghost @click="goToIPInfo">
       <template #icon>
         <n-icon>
