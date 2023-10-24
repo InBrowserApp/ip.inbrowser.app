@@ -16,7 +16,7 @@
           <template #header-extra>
             <IPVersionTag :ip="ip" />
           </template>
-          
+
           <IPInfo :ip="ip" />
         </n-collapse-item>
       </n-collapse>
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { NH2, NP, NResult, NCollapse, NCollapseItem } from "naive-ui";
+import { NH2, NResult, NCollapse, NCollapseItem } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
 import { useRoute } from "vue-router";
