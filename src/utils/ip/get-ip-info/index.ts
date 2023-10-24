@@ -2,9 +2,9 @@ import IPSB from "./ip.sb";
 import geojsIo from "./geojs.io";
 import cloudflareDoh from "./cloudflare-doh";
 import googleDoh from "./google-doh";
-import type { IPInfo } from "./types.ts";
+import type { IPInfo } from "./types";
 
-export type { IPInfo } from "./types.ts";
+export type { IPInfo } from "./types";
 
 type IPInfoProviderFunction = (
   ip: string,

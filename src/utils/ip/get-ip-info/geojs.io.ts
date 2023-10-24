@@ -1,4 +1,4 @@
-import type { IPInfo } from "./types.ts";
+import type { IPInfo } from "./types";
 
 export const name = "ip.sb";
 
