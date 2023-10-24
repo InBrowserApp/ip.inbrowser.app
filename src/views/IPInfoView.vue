@@ -11,7 +11,10 @@
     </template>
 
     <template v-else>
-      <n-collapse display-directive="show" :default-expanded-names="ips">
+      <n-collapse
+        display-directive="show"
+        v-model:expanded-names="expandedNames"
+      >
         <n-collapse-item v-for="ip in ips" :key="ip" :title="ip" :name="ip">
           <template #header-extra>
             <IPVersionTag :ip="ip" />
@@ -35,12 +38,14 @@ import { validateIPv4, validateIPv6 } from "@/utils/ip/common/validate";
 import { getDomainIPs } from "@/utils/ip/get-domain-ips";
 import IPVersionTag from "@/components/tools/ip-info/IPVersionTag.vue";
 import { computedAsync } from "@vueuse/core";
+import { ref, watch } from "vue";
 
 const route = useRoute();
 const ipdomain = computed(() => route.params.ipdomain as string);
 const isIP = computed(
   () => validateIPv4(ipdomain.value) || validateIPv6(ipdomain.value)
 );
+const expandedNames = ref<string[]>([]);
 const ips = computedAsync<string[] | undefined>(async () => {
   if (isIP.value) {
     return [ipdomain.value];
@@ -53,6 +58,10 @@ const ips = computedAsync<string[] | undefined>(async () => {
     }
   }
 }, undefined);
+
+watch(ips, () => {
+  expandedNames.value = ips.value ?? [];
+});
 
 useHead(
   computed(() => ({
