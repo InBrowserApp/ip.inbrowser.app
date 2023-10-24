@@ -32,29 +32,27 @@ import { useRoute } from "vue-router";
 import { computed } from "vue";
 import IPInfo from "@/components/tools/ip-info/IPInfo.vue";
 import { validateIPv4, validateIPv6 } from "@/utils/ip/common/validate";
-import { ref, onMounted } from "vue";
 import { getDomainIPs } from "@/utils/ip/get-domain-ips";
 import IPVersionTag from "@/components/tools/ip-info/IPVersionTag.vue";
+import { computedAsync } from "@vueuse/core";
 
 const route = useRoute();
 const ipdomain = computed(() => route.params.ipdomain as string);
 const isIP = computed(
   () => validateIPv4(ipdomain.value) || validateIPv6(ipdomain.value)
 );
-const ips = ref<string[] | undefined>(undefined);
-
-onMounted(async () => {
+const ips = computedAsync<string[] | undefined>(async () => {
   if (isIP.value) {
-    ips.value = [ipdomain.value];
+    return [ipdomain.value];
   } else {
     try {
-      ips.value = await getDomainIPs(ipdomain.value);
+      return await getDomainIPs(ipdomain.value);
     } catch (e) {
       console.error(e);
-      ips.value = [];
+      return [];
     }
   }
-});
+}, undefined);
 
 useHead(
   computed(() => ({
