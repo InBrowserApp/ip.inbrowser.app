@@ -2,6 +2,7 @@ import IPSB from "./ip.sb";
 import geojsIo from "./geojs.io";
 import cloudflareDoh from "./cloudflare-doh";
 import googleDoh from "./google-doh";
+import geojsIoPtr from "./geojs.io-ptr";
 import type { IPInfo } from "./types";
 
 export type { IPInfo } from "./types";
@@ -21,4 +22,5 @@ export const IPInfoProviders: IPInfoProvider[] = [
   IPSB,
   cloudflareDoh,
   googleDoh,
+  geojsIoPtr,
 ];

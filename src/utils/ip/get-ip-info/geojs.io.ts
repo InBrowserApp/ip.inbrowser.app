@@ -1,6 +1,6 @@
 import type { IPInfo } from "./types";
 
-export const name = "ip.sb";
+export const name = "geojs.io";
 
 interface APIResult {
   organization_name: string;
