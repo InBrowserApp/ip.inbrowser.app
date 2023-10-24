@@ -5,7 +5,14 @@
       v-model:value="value"
       @keydown.enter="goToIPInfo"
     />
-    <n-button ghost @click="goToIPInfo">
+    <n-button
+      ghost
+      @click="goToIPInfo"
+      tag="a"
+      v-bind="{
+        ...(href && { href: href }),
+      }"
+    >
       <template #icon>
         <n-icon>
           <Search16Filled />
@@ -17,7 +24,7 @@
 
 <script setup lang="ts">
 import { NInput, NButton, NInputGroup, NIcon } from "naive-ui";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { Search16Filled } from "@vicons/fluent";
 
@@ -29,4 +36,10 @@ const goToIPInfo = () => {
 
   router.push(`/tools/ip-info/${value.value}`);
 };
+
+const href = computed(() => {
+  if (value.value === "") return undefined;
+
+  return `/tools/ip-info/${value.value}`;
+});
 </script>
