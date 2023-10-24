@@ -31,6 +31,7 @@ export async function getIPInfo(
     ...data,
     latitude: Number(data.latitude),
     longitude: Number(data.longitude),
+    asn_organization: data.organization_name,
   };
 }
 
