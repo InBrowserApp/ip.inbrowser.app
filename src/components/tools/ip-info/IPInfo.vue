@@ -5,7 +5,12 @@
     :column="1"
     content-style="width: 100%"
   >
-    <n-descriptions-item label="IP Address">{{ ip }}</n-descriptions-item>
+    <n-descriptions-item label="IP Address">
+      <span v-if="ip">
+        {{ ip }}
+      </span>
+      <IPInfoDataLoadingUnknown :data="ip" />
+    </n-descriptions-item>
     <n-descriptions-item label="Hostname">
       <span v-if="info.hostname">
         {{ info.hostname }}
@@ -83,18 +88,24 @@ import { onMounted, ref, computed } from "vue";
 import IPInfoDataLoadingUnknown from "./IPInfoDataLoadingUnknown.vue";
 
 const props = defineProps<{
-  ip: string;
+  ip?: string;
 }>();
 
 const info = ref<IPInfo>({});
 
 onMounted(async () => {
+  const ip = props.ip;
+
+  if (!ip) {
+    return;
+  }
+
   const promises = [];
 
   for (const provider of IPInfoProviders) {
     promises.push(
       (async () => {
-        const result = await provider.getIPInfo(props.ip);
+        const result = await provider.getIPInfo(ip);
         for (const [key, value] of Object.entries(result)) {
           // @ts-ignore
           if (info.value?.[key] === undefined) {

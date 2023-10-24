@@ -17,7 +17,7 @@ const router = createRouter({
       component: MyIPViewVue,
     },
     {
-      path: "/tools/ip-info/:ip",
+      path: "/tools/ip-info/:ipdomain",
       name: "ip-info",
       component: IPInfoView,
     },
