@@ -145,10 +145,13 @@ onMounted(async () => {
 const location = computed(() => {
   if (info.value.longitude && info.value.latitude) {
     return `${info.value.longitude} / ${info.value.latitude}`;
-  } else if (info.value.longitude === null && info.value.latitude === null) {
-    return null;
-  } else {
+  } else if (
+    info.value.longitude === undefined ||
+    info.value.latitude === undefined
+  ) {
     return undefined;
+  } else {
+    return null;
   }
 });
 
