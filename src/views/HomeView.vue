@@ -21,7 +21,7 @@
       <router-link to="/tools/cidr-parse" #="{ navigate, href }" custom>
         <n-button tag="a" :href="href" @click="navigate" text>
           <template #icon>
-            <n-icon :component="ArrowRepeatAll16Regular" />
+            <n-icon :component="AutoFitWidth20Regular" />
           </template>
           CIDR Parse
         </n-button>
@@ -59,7 +59,7 @@ import { NH2, NButton, NIcon, NSpace } from "naive-ui";
 import {
   DocumentSearch16Regular,
   Person16Regular,
-  ArrowRepeatAll16Regular,
+  AutoFitWidth20Regular,
   Merge24Regular,
   ArrowAutofitWidth20Regular,
   TextGrammarCheckmark20Regular,
