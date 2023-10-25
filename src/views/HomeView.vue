@@ -18,13 +18,25 @@
           IP Info Lookup
         </n-button>
       </router-link>
+      <router-link to="/tools/cidr-to-ip" #="{ navigate, href }" custom>
+        <n-button tag="a" :href="href" @click="navigate" text>
+          <template #icon>
+            <n-icon :component="ArrowRepeatAll16Regular" />
+          </template>
+          CIDR to IP
+        </n-button>
+      </router-link>
     </n-space>
   </main>
 </template>
 
 <script setup lang="ts">
 import { NH2, NButton, NIcon, NSpace } from "naive-ui";
-import { DocumentSearch16Regular, Person16Regular } from "@vicons/fluent";
+import {
+  DocumentSearch16Regular,
+  Person16Regular,
+  ArrowRepeatAll16Regular,
+} from "@vicons/fluent";
 import { useHead } from "@vueuse/head";
 
 useHead({

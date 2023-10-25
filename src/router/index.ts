@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import MyIPViewVue from "@/views/MyIPView.vue";
 import IPInfoView from "@/views/IPInfoView.vue";
 import IPInfoLookupView from "@/views/IPInfoLookupView.vue";
+import CIDRToIPView from "@/views/CIDRToIPView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/tools/ip-info/:ipdomain",
       name: "ip-info",
       component: IPInfoView,
+    },
+    {
+      path: "/tools/cidr-to-ip",
+      name: "cidr-to-ip",
+      component: CIDRToIPView,
     },
   ],
 });
