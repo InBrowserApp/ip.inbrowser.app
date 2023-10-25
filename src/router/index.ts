@@ -51,6 +51,12 @@ const router = createRouter({
       name: "ip-cidr-normalize",
       component: IPCIDRNormalizeView,
     },
+
+    // catch all
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: { name: "home" },
+    },
   ],
 });
 
