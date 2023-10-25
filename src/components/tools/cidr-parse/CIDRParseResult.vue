@@ -40,6 +40,7 @@
 import { computed } from "vue";
 import { parse } from "cidr-tools";
 import { NDescriptions, NDescriptionsItem } from "naive-ui";
+// @ts-ignore
 import { stringifyIp } from "ip-bigint";
 
 const props = defineProps<{
