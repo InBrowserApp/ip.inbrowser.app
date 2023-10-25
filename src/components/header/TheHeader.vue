@@ -3,7 +3,7 @@
     <div class="wrapper">
       <HeaderText />
       <HeaderNav class="nav hidden-on-print" style="margin-bottom: 1em" />
-      <IPInfoSearchInput />
+      <IPInfoSearchInput style="margin-bottom: 1em" />
     </div>
   </header>
 </template>
