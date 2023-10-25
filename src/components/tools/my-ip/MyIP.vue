@@ -48,7 +48,14 @@ const ipv6 = computedAsync<string | undefined | null>(async () => {
 const ipWebRTCLeak = computedAsync<string[] | undefined>(async () => {
   try {
     const ips = await getIPs();
-    return ips.map((ip: { address: string; v6: boolean }) => ip.address);
+    const addresses = ips.map(
+      (ip: { address: string; v6: boolean }) => ip.address
+    );
+    if (addresses.length === 0) {
+      return undefined;
+    }
+
+    return addresses;
   } catch (error) {
     console.error(error);
     return undefined;
