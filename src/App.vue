@@ -5,7 +5,20 @@
       <n-loading-bar-provider>
         <div class="app">
           <TheHeader />
-          <RouterView />
+          <router-view v-slot="{ Component }">
+            <keep-alive :max="20">
+              <component
+                :is="Component"
+                :key="$route.path"
+                v-if="$route.meta.keepAlive"
+              />
+            </keep-alive>
+            <component
+              :is="Component"
+              :key="$route.name"
+              v-if="!$route.meta.keepAlive"
+            />
+          </router-view>
         </div>
       </n-loading-bar-provider>
     </n-message-provider>

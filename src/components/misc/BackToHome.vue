@@ -14,6 +14,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const onClick = () => {
-  router.push("/");
+  router.go(-1);
 };
 </script>

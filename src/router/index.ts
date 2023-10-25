@@ -35,21 +35,33 @@ const router = createRouter({
       path: "/tools/cidr-parse",
       name: "cidr-parse",
       component: CIDRParseView,
+      meta: {
+        keepAlive: true,
+      },
     },
     {
       path: "/tools/cidr-merge-exclude",
       name: "cidr-merge-exclude",
       component: CIDRMergeExcludeView,
+      meta: {
+        keepAlive: true,
+      },
     },
     {
       path: "/tools/ip-range-to-cidr",
       name: "ip-range-to-cidr",
       component: IPRangeToCIDRView,
+      meta: {
+        keepAlive: true,
+      },
     },
     {
       path: "/tools/ip-cidr-normalize",
       name: "ip-cidr-normalize",
       component: IPCIDRNormalizeView,
+      meta: {
+        keepAlive: true,
+      },
     },
 
     // catch all
