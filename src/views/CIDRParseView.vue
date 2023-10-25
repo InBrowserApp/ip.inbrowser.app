@@ -17,7 +17,7 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Convert CIDR Parse. IPv4 & IPv6 supported.",
+      content: "Parse CIDR. IPv4 & IPv6 supported.",
     },
   ],
   link: [
