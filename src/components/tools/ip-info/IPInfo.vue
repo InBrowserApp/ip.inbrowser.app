@@ -93,6 +93,9 @@ const props = defineProps<{
 
 const info = ref<IPInfo>({});
 
+
+
+
 onMounted(async () => {
   const ip = props.ip;
 
