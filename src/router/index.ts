@@ -6,6 +6,7 @@ import IPInfoLookupView from "@/views/IPInfoLookupView.vue";
 import CIDRParseView from "@/views/CIDRParseView.vue";
 import CIDRMergeExcludeView from "@/views/CIDRMergeExcludeView.vue";
 import IPRangeToCIDRView from "@/views/IPRangeToCIDRView.vue";
+import IPCIDRNormalizeView from "@/views/IPCIDRNormalizeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: "/tools/ip-range-to-cidr",
       name: "ip-range-to-cidr",
       component: IPRangeToCIDRView,
+    },
+    {
+      path: "/tools/ip-cidr-normalize",
+      name: "ip-cidr-normalize",
+      component: IPCIDRNormalizeView,
     },
   ],
 });

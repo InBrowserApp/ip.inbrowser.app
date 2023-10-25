@@ -42,6 +42,14 @@
           IP Range to CIDR
         </n-button>
       </router-link>
+      <router-link to="/tools/ip-cidr-normalize" #="{ navigate, href }" custom>
+        <n-button tag="a" :href="href" @click="navigate" text>
+          <template #icon>
+            <n-icon :component="ArrowAutofitWidth20Regular" />
+          </template>
+          IP/CIDR Normalize
+        </n-button>
+      </router-link>
     </n-space>
   </main>
 </template>
