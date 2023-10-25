@@ -1,4 +1,4 @@
-import { validateIPv4, validateIPv6 } from "../common/validate";
+import { isIPv4, isIPv6 } from "is-ip";
 
 export const serverName = "Cloudflare";
 
@@ -10,7 +10,7 @@ export async function getMyIPUniversal(options?: RequestInit): Promise<string> {
     .split("\n")
     .filter((line) => line.startsWith("ip="))[0]
     .split("=")[1];
-  if (!validateIPv4(ip) && !validateIPv6(ip)) {
+  if (!isIPv4(ip) && !isIPv6(ip)) {
     throw new Error(`Invalid IP: ${ip}`);
   }
 
@@ -19,7 +19,7 @@ export async function getMyIPUniversal(options?: RequestInit): Promise<string> {
 
 export async function getMyIPv4(options?: RequestInit): Promise<string> {
   const ip = await getMyIPUniversal(options);
-  if (!validateIPv4(ip)) {
+  if (!isIPv4(ip)) {
     throw new Error(`Invalid IPv4: ${ip}`);
   }
 
@@ -28,7 +28,7 @@ export async function getMyIPv4(options?: RequestInit): Promise<string> {
 
 export async function getMyIPv6(options?: RequestInit): Promise<string> {
   const ip = await getMyIPUniversal(options);
-  if (!validateIPv6(ip)) {
+  if (!isIPv6(ip)) {
     throw new Error(`Invalid IPv4: ${ip}`);
   }
 

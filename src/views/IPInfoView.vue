@@ -34,7 +34,7 @@ import BackToHome from "@/components/misc/BackToHome.vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
 import IPInfo from "@/components/tools/ip-info/IPInfo.vue";
-import { validateIPv4, validateIPv6 } from "@/utils/ip/common/validate";
+import { isIP as isIPFunction } from "is-ip";
 import { getDomainIPs } from "@/utils/ip/get-domain-ips";
 import IPVersionTag from "@/components/tools/ip-info/IPVersionTag.vue";
 import { computedAsync } from "@vueuse/core";
@@ -42,9 +42,7 @@ import { ref, watch } from "vue";
 
 const route = useRoute();
 const ipdomain = computed(() => route.params.ipdomain as string);
-const isIP = computed(
-  () => validateIPv4(ipdomain.value) || validateIPv6(ipdomain.value)
-);
+const isIP = computed(() => isIPFunction(ipdomain.value));
 const expandedNames = ref<string[]>([]);
 const ips = computedAsync<string[] | undefined>(async () => {
   if (isIP.value) {

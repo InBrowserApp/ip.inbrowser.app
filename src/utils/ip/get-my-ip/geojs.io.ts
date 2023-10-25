@@ -1,4 +1,4 @@
-import { validateIPv4, validateIPv6 } from "../common/validate";
+import { isIPv4, isIPv6 } from "is-ip";
 
 export const name = "GeoJS";
 
@@ -7,7 +7,7 @@ export async function getMyIPv4(options?: RequestInit): Promise<string> {
   const response = await fetch(api, options);
   const data = await response.json();
   const ip = data.ip;
-  if (!validateIPv4(ip)) {
+  if (!isIPv4(ip)) {
     throw new Error(`Invalid IPv4: ${ip}`);
   }
 
@@ -19,7 +19,7 @@ export async function getMyIPv6(options?: RequestInit): Promise<string> {
   const response = await fetch(api, options);
   const data = await response.json();
   const ip = data.ip;
-  if (!validateIPv6(ip)) {
+  if (!isIPv6(ip)) {
     throw new Error(`Invalid IPv4: ${ip}`);
   }
 
