@@ -4,6 +4,7 @@ import MyIPViewVue from "@/views/MyIPView.vue";
 import IPInfoView from "@/views/IPInfoView.vue";
 import IPInfoLookupView from "@/views/IPInfoLookupView.vue";
 import CIDRParseView from "@/views/CIDRParseView.vue";
+import CIDRMergeExcludeView from "@/views/CIDRMergeExcludeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: "/tools/cidr-parse",
       name: "cidr-parse",
       component: CIDRParseView,
+    },
+    {
+      path: "/tools/cidr-merge-exclude",
+      name: "cidr-merge-exclude",
+      component: CIDRMergeExcludeView,
     },
   ],
 });

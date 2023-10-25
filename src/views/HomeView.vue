@@ -26,6 +26,14 @@
           CIDR Parse
         </n-button>
       </router-link>
+      <router-link to="/tools/cidr-merge-exclude" #="{ navigate, href }" custom>
+        <n-button tag="a" :href="href" @click="navigate" text>
+          <template #icon>
+            <n-icon :component="Merge24Regular" />
+          </template>
+          CIDRs Merge & Exclude
+        </n-button>
+      </router-link>
     </n-space>
   </main>
 </template>
@@ -36,6 +44,7 @@ import {
   DocumentSearch16Regular,
   Person16Regular,
   ArrowRepeatAll16Regular,
+  Merge24Regular,
 } from "@vicons/fluent";
 import { useHead } from "@vueuse/head";
 
