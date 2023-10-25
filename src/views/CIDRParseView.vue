@@ -1,8 +1,8 @@
 <template>
   <main>
     <BackToHome />
-    <n-h2 prefix="bar" align-text>CIDR to IP</n-h2>
-    <CIDRToIP />
+    <n-h2 prefix="bar" align-text>CIDR Parse</n-h2>
+    <CIDRParse />
   </main>
 </template>
 
@@ -10,20 +10,20 @@
 import { NH2 } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
-import CIDRToIP from "@/components/tools/cidr-to-ip/CIDRToIP.vue";
+import CIDRParse from "@/components/tools/cidr-parse/CIDRParse.vue";
 
 useHead({
-  title: "CIDR to IP | IP InBrowser.App",
+  title: "CIDR Parse | IP InBrowser.App",
   meta: [
     {
       name: "description",
-      content: "Convert CIDR to IP. IPv4 & IPv6 supported.",
+      content: "Convert CIDR Parse. IPv4 & IPv6 supported.",
     },
   ],
   link: [
     {
       rel: "canonical",
-      href: "https://ip.inbrowser.app/tools/cidr-to-ip",
+      href: "https://ip.inbrowser.app/tools/cidr-parse",
     },
   ],
 });

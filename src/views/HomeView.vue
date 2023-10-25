@@ -18,12 +18,12 @@
           IP Info Lookup
         </n-button>
       </router-link>
-      <router-link to="/tools/cidr-to-ip" #="{ navigate, href }" custom>
+      <router-link to="/tools/cidr-parse" #="{ navigate, href }" custom>
         <n-button tag="a" :href="href" @click="navigate" text>
           <template #icon>
             <n-icon :component="ArrowRepeatAll16Regular" />
           </template>
-          CIDR to IP
+          CIDR Parse
         </n-button>
       </router-link>
     </n-space>

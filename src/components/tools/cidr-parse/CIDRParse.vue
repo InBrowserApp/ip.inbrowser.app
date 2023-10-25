@@ -1,12 +1,12 @@
 <template>
   <CIDRInput @update:cidr="cidr = $event" />
-  <CIDRParse :cidr="cidr" />
+  <CIDRParseResult :cidr="cidr" />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import CIDRInput from "./CIDRInput.vue";
-import CIDRParse from "./CIDRParse.vue";
+import CIDRParseResult from "./CIDRParseResult.vue";
 
 const cidr = ref("");
 </script>
