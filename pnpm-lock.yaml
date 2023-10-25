@@ -4,6 +4,9 @@ dependencies:
   '@vueuse/core':
     specifier: ^10.5.0
     version: 10.5.0(vue@3.2.47)
+  cidr-calc:
+    specifier: ^1.0.4
+    version: 1.0.4
   cidr-tools:
     specifier: ^7.0.2
     version: 7.0.2
@@ -2354,6 +2357,10 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /cidr-calc@1.0.4:
+    resolution: {integrity: sha512-SZcjmxxNkaCVcsFAuT+Xo9YLG9vbkrdFrspC9IVG+3kfSC84hfMzVEHttNrr0C9u7gTNf7OUYwb1WnM5pZtLZg==}
+    dev: false
 
   /cidr-regex@4.0.3:
     resolution: {integrity: sha512-HOwDIy/rhKeMf6uOzxtv7FAbrz8zPjmVKfSpM+U7/bNBXC5rtOyr758jxcptiSx6ZZn5LOhPJT5WWxPAGDV8dw==}

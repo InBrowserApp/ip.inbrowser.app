@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.5.0",
+    "cidr-calc": "^1.0.4",
     "cidr-tools": "^7.0.2",
     "ip-bigint": "^8.0.0",
     "is-cidr": "^5.0.3",
