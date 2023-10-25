@@ -11,13 +11,17 @@
       IPv{{ parsed.version }}
     </n-descriptions-item>
     <n-descriptions-item label="Start IP">
-      {{ startIP }}
+      <router-link :to="`/tools/ip-info/${startIP}`" class="link">
+        {{ startIP }}
+      </router-link>
     </n-descriptions-item>
     <n-descriptions-item label="Start IP Integer">
       {{ startIPInt }}
     </n-descriptions-item>
     <n-descriptions-item label="End IP">
-      {{ endIP }}
+      <router-link :to="`/tools/ip-info/${endIP}`" class="link">
+        {{ endIP }}
+      </router-link>
     </n-descriptions-item>
     <n-descriptions-item label="End IP Integer">
       {{ endIPInt }}
@@ -134,3 +138,14 @@ const netmask = computed(() => {
   return undefined;
 });
 </script>
+
+<style scoped>
+.link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+</style>
