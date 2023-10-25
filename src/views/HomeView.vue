@@ -45,7 +45,7 @@
       <router-link to="/tools/ip-cidr-normalize" #="{ navigate, href }" custom>
         <n-button tag="a" :href="href" @click="navigate" text>
           <template #icon>
-            <n-icon :component="ArrowAutofitWidth20Regular" />
+            <n-icon :component="TextGrammarCheckmark20Regular" />
           </template>
           IP/CIDR Normalize
         </n-button>
@@ -62,6 +62,7 @@ import {
   ArrowRepeatAll16Regular,
   Merge24Regular,
   ArrowAutofitWidth20Regular,
+  TextGrammarCheckmark20Regular,
 } from "@vicons/fluent";
 import { useHead } from "@vueuse/head";
 
