@@ -10,8 +10,8 @@
       </router-link>
     </n-h1>
     <n-h2 class="h2">
-      IP InBrowser.App is a tool to check IP. Fully runs in your browser. No
-      server-side code.
+      IP InBrowser.App is a set of powerful IP tools. Fully runs in your
+      browser. No server-side code.
     </n-h2>
   </div>
 </template>

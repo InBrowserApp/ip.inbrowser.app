@@ -26,7 +26,7 @@ export default defineConfig({
         name: "IP InBrowser.App",
         short_name: "IP",
         description:
-          "IP InBrowser.App is a tool to check IP. Fully runs in your browser. No server-side code.",
+          "IP InBrowser.App is a set of powerful IP tools. Fully runs in your browser. No server-side code.",
         theme_color: "#ffffff",
         icons: [
           {
