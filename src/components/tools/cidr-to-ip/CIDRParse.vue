@@ -13,11 +13,21 @@
     <n-descriptions-item label="Start IP">
       {{ startIP }}
     </n-descriptions-item>
+    <n-descriptions-item label="Start IP Integer">
+      {{ startIPInt }}
+    </n-descriptions-item>
     <n-descriptions-item label="End IP">
       {{ endIP }}
     </n-descriptions-item>
+    <n-descriptions-item label="End IP Integer">
+      {{ endIPInt }}
+    </n-descriptions-item>
     <n-descriptions-item label="Number of IPs">
       {{ IPSize }}
+    </n-descriptions-item>
+
+    <n-descriptions-item label="Netmask" v-if="netmask">
+      {{ netmask }}
     </n-descriptions-item>
   </n-descriptions>
 </template>
@@ -57,6 +67,14 @@ const startIP = computed(() => {
   });
 });
 
+const startIPInt = computed(() => {
+  if (parsed.value === undefined) {
+    return undefined;
+  }
+
+  return parsed.value.start.toString();
+});
+
 const endIP = computed(() => {
   if (parsed.value === undefined) {
     return undefined;
@@ -68,6 +86,14 @@ const endIP = computed(() => {
     ipv4mapped: undefined,
     scopeid: undefined,
   });
+});
+
+const endIPInt = computed(() => {
+  if (parsed.value === undefined) {
+    return undefined;
+  }
+
+  return parsed.value.end.toString();
 });
 
 const IPSize = computed(() => {
@@ -86,5 +112,25 @@ const IPSize = computed(() => {
   const sizeScientific = size.toLocaleString("en-US", fmt);
 
   return `${sizeString} (${sizeScientific})`;
+});
+
+const netmask = computed(() => {
+  if (parsed.value === undefined) {
+    return undefined;
+  }
+
+  const prefix = parsed.value.prefix;
+  if (parsed.value.version === 4) {
+    const cidr = `255.255.255.255/${prefix}`;
+    const result = parse(cidr);
+    return stringifyIp({
+      number: result.start,
+      version: result.version,
+      ipv4mapped: undefined,
+      scopeid: undefined,
+    });
+  }
+
+  return undefined;
 });
 </script>

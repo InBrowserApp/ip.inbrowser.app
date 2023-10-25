@@ -8,5 +8,5 @@ import { ref } from "vue";
 import CIDRInput from "./CIDRInput.vue";
 import CIDRParse from "./CIDRParse.vue";
 
-const cidr = ref("1.1.1.1/24");
+const cidr = ref("");
 </script>
