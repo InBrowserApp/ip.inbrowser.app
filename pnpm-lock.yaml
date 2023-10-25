@@ -10,6 +10,9 @@ dependencies:
   vue-router:
     specifier: ^4.1.6
     version: 4.1.6(vue@3.2.47)
+  webrtc-ips:
+    specifier: ^0.2.0
+    version: 0.2.0
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -3701,6 +3704,11 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: true
 
+  /promise-controller@0.3.0:
+    resolution: {integrity: sha512-w1RTaOwD5bNtYjIj5L8+ruDtMgnKC0pLtOogA3kcS4LRtiwLOpAdokjYbkjJMa6AGV0oasHa8RRNa8qEpG1qyw==}
+    engines: {node: '>=6'}
+    dev: false
+
   /punycode@2.3.0:
     resolution: {integrity: sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==}
     engines: {node: '>=6'}
@@ -4403,6 +4411,12 @@ packages:
   /webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
     dev: true
+
+  /webrtc-ips@0.2.0:
+    resolution: {integrity: sha512-5TaJMFMIUMycsDBcg5QzRe1RlD2akDGfYs5+9+0+1DgTZ858KfyXjA8oIfR5xq3Y3X/ILGzRZ/mkN3/yuC+kcA==}
+    dependencies:
+      promise-controller: 0.3.0
+    dev: false
 
   /whatwg-url@7.1.0:
     resolution: {integrity: sha512-WUu7Rg1DroM7oQvGWfOiAK21n74Gg+T4elXEQYkOhtyLeWiJFoOGLXPKI/9gzIie9CtwVLm8wtw6YJdKyxSjeg==}
