@@ -12,4 +12,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
   },
+  env: {
+    es2020: true, // <- activate “es2020” globals
+    browser: true,
+  },
 };

@@ -4,6 +4,15 @@ dependencies:
   '@vueuse/core':
     specifier: ^10.5.0
     version: 10.5.0(vue@3.2.47)
+  cidr-tools:
+    specifier: ^7.0.2
+    version: 7.0.2
+  ip-bigint:
+    specifier: ^8.0.0
+    version: 8.0.0
+  is-cidr:
+    specifier: ^5.0.3
+    version: 5.0.3
   is-ip:
     specifier: ^5.0.1
     version: 5.0.1
@@ -2346,6 +2355,20 @@ packages:
       supports-color: 7.2.0
     dev: true
 
+  /cidr-regex@4.0.3:
+    resolution: {integrity: sha512-HOwDIy/rhKeMf6uOzxtv7FAbrz8zPjmVKfSpM+U7/bNBXC5rtOyr758jxcptiSx6ZZn5LOhPJT5WWxPAGDV8dw==}
+    engines: {node: '>=14'}
+    dependencies:
+      ip-regex: 5.0.0
+    dev: false
+
+  /cidr-tools@7.0.2:
+    resolution: {integrity: sha512-7/ABQ0kwDsqdaiUyazWBZLIg3Bxj8DSTPuE6NIf4capmf8oDRc6fYeqa5FJOtUj/L1fF+MJWHwdcsWLCM1aJdw==}
+    engines: {node: '>=18'}
+    dependencies:
+      ip-bigint: 8.0.0
+    dev: false
+
   /clone-regexp@3.0.0:
     resolution: {integrity: sha512-ujdnoq2Kxb8s3ItNBtnYeXdm07FcU0u8ARAT1lQ2YdMwQC+cdiXX8KoqMVuglztILivceTtp4ivqGSmEmhBUJw==}
     engines: {node: '>=12'}
@@ -3132,6 +3155,11 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /ip-bigint@8.0.0:
+    resolution: {integrity: sha512-QM9TKZiXcQ+pXDCN06AZbEsgvfJYUjXxHyWwrzvYs5iyK7MWjYtFdJuz1LPgnm9d8ezd5kAGaCTHAxBfYCnQ9A==}
+    engines: {node: '>=18'}
+    dev: false
+
   /ip-regex@5.0.0:
     resolution: {integrity: sha512-fOCG6lhoKKakwv+C6KdsOnGvgXnmgfmp0myi3bcNwj3qfwPAxRKWEuFhvEFF7ceYIz6+1jRZ+yguLFAmUNPEfw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -3167,6 +3195,13 @@ packages:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /is-cidr@5.0.3:
+    resolution: {integrity: sha512-lKkM0tmz07dAxNsr8Ii9MGreExa9ZR34N9j8mTG5op824kcwBqinZPowNjcVWWc7j+jR8XAMMItOmBkniN0jOA==}
+    engines: {node: '>=14'}
+    dependencies:
+      cidr-regex: 4.0.3
+    dev: false
 
   /is-core-module@2.11.0:
     resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}
