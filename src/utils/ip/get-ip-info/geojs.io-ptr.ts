@@ -15,6 +15,10 @@ export async function getIPInfo(
     options
   );
   const data: APIResult = await response.json();
+  if (data.ptr === "Failed to get PTR record") {
+    throw new Error("Failed to get PTR record");
+  }
+
   return {
     hostname: data.ptr,
   };
