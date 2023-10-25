@@ -34,6 +34,14 @@
           CIDRs Merge & Exclude
         </n-button>
       </router-link>
+      <router-link to="/tools/ip-range-to-cidr" #="{ navigate, href }" custom>
+        <n-button tag="a" :href="href" @click="navigate" text>
+          <template #icon>
+            <n-icon :component="ArrowAutofitWidth20Regular" />
+          </template>
+          IP Range to CIDR
+        </n-button>
+      </router-link>
     </n-space>
   </main>
 </template>
@@ -45,6 +53,7 @@ import {
   Person16Regular,
   ArrowRepeatAll16Regular,
   Merge24Regular,
+  ArrowAutofitWidth20Regular,
 } from "@vicons/fluent";
 import { useHead } from "@vueuse/head";
 
