@@ -4,8 +4,7 @@
     <n-h2 prefix="bar" align-text>IP Range to CIDR Converter</n-h2>
     <n-p>
       This tool converts IP ranges to CIDR notation, supporting both IPv4 and
-      IPv6 addresses. Enter the IP range and get the CIDR notation within real
-      time. Ideal for making network management tasks easier.
+      IPv6 addresses. Enter the IP range and get the CIDR notation instantly.
     </n-p>
 
     <IPRangeToCIDR />
@@ -24,7 +23,7 @@ useHead({
     {
       name: "description",
       content:
-        "This tool converts IP ranges to CIDR notation, supporting both IPv4 and IPv6 addresses. Enter the IP range and get the CIDR notation within real time. Ideal for making network management tasks easier.",
+        "This tool converts IP ranges to CIDR notation, supporting both IPv4 and IPv6 addresses. Enter the IP range and get the CIDR notation instantly.",
     },
   ],
   link: [
