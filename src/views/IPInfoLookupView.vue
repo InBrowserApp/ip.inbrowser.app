@@ -24,7 +24,7 @@ useHead({
     {
       name: "description",
       content:
-        "Lookup IP Info. Fully runs in your browser. No server-side code.",
+        "This tool retrieves detailed information about an IP address, aiding in network analysis and troubleshooting. Enter the IP, and get instant information including location, ISP, and associated domain name. ",
     },
   ],
   link: [
