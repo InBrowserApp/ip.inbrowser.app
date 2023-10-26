@@ -2,12 +2,17 @@
   <main>
     <BackToHome />
     <n-h2 prefix="bar" align-text>CIDRs Merge & Exclude</n-h2>
+    <n-p
+      >This tool efficiently merges multiple CIDR blocks and can exclude
+      specified CIDRs, supporting both IPv4 and IPv6 formats. Enter the CIDRs to
+      be merged or excluded, and get the resulting CIDR blocks instantly.</n-p
+    >
     <CIDRMergeExclude />
   </main>
 </template>
 
 <script setup lang="ts">
-import { NH2 } from "naive-ui";
+import { NH2, NP } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
 import CIDRMergeExclude from "@/components/tools/cidr-merge-exclude/CIDRMergeExclude.vue";
@@ -17,7 +22,8 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Merge and Exclude CIDRs. IPv4 & IPv6 supported.",
+      content:
+        "This tool efficiently merges multiple CIDR blocks and can exclude specified CIDRs, supporting both IPv4 and IPv6 formats. Enter the CIDRs to be merged or excluded, and get the resulting CIDR blocks instantly.",
     },
   ],
   link: [
