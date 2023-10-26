@@ -23,7 +23,7 @@
           <template #icon>
             <n-icon :component="AutoFitWidth20Regular" />
           </template>
-          CIDR Parse
+          CIDR Parser
         </n-button>
       </router-link>
       <router-link to="/tools/cidr-merge-exclude" #="{ navigate, href }" custom>
@@ -31,7 +31,7 @@
           <template #icon>
             <n-icon :component="Merge24Regular" />
           </template>
-          CIDRs Merge & Exclude
+          CIDRs Merger & Excluder
         </n-button>
       </router-link>
       <router-link to="/tools/ip-range-to-cidr" #="{ navigate, href }" custom>
@@ -39,7 +39,7 @@
           <template #icon>
             <n-icon :component="ArrowAutofitWidth20Regular" />
           </template>
-          IP Range to CIDR
+          IP Range to CIDR Converter
         </n-button>
       </router-link>
       <router-link to="/tools/ip-cidr-normalize" #="{ navigate, href }" custom>
@@ -47,7 +47,7 @@
           <template #icon>
             <n-icon :component="TextGrammarCheckmark20Regular" />
           </template>
-          IP/CIDR Normalize
+          IP/CIDR Normalizer
         </n-button>
       </router-link>
     </n-space>
