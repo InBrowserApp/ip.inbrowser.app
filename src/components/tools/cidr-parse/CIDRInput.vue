@@ -1,5 +1,5 @@
 <template>
-  <n-form-item label="CIDR" :rule="rule">
+  <n-form-item label="CIDR" :rule="rule" :show-label="false">
     <n-input v-model:value="cidr" placeholder="10.0.0.0/24 or 2001:db8::/32" />
   </n-form-item>
 </template>
