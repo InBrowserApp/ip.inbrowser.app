@@ -1,23 +1,30 @@
 <template>
   <main>
     <BackToHome />
-    <n-h2 prefix="bar" align-text>CIDR Parse</n-h2>
+    <n-h2 prefix="bar" align-text>CIDR Parser</n-h2>
+    <n-p>
+      "This tool parses CIDR notation to provide detailed information about IP
+      addresses and networks, supporting both IPv4 and IPv6 formats. Enter the
+      CIDR, and get the network address, broadcast address, and the range of
+      usable IPs instantly.
+    </n-p>
     <CIDRParse />
   </main>
 </template>
 
 <script setup lang="ts">
-import { NH2 } from "naive-ui";
+import { NH2, NP } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
 import CIDRParse from "@/components/tools/cidr-parse/CIDRParse.vue";
 
 useHead({
-  title: "CIDR Parse | IP InBrowser.App",
+  title: "CIDR Parser | IP InBrowser.App",
   meta: [
     {
       name: "description",
-      content: "Parse CIDR. IPv4 & IPv6 supported.",
+      content:
+        "This tool parses CIDR notation to provide detailed information about IP addresses and networks, supporting both IPv4 and IPv6 formats. Enter the CIDR, and get the network address, broadcast address, and the range of usable IPs instantly",
     },
   ],
   link: [
