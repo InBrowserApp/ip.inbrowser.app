@@ -1,7 +1,7 @@
 <template>
   <main>
     <BackToHome />
-    <n-h2 prefix="bar" align-text>CIDRs Merge & Exclude</n-h2>
+    <n-h2 prefix="bar" align-text>CIDRs Merger & Excluder</n-h2>
     <n-p
       >This tool efficiently merges multiple CIDR blocks and can exclude
       specified CIDRs, supporting both IPv4 and IPv6 formats. Enter the CIDRs to
@@ -18,7 +18,7 @@ import BackToHome from "@/components/misc/BackToHome.vue";
 import CIDRMergeExclude from "@/components/tools/cidr-merge-exclude/CIDRMergeExclude.vue";
 
 useHead({
-  title: "CIDRs Merge & Exclude | IP InBrowser.App",
+  title: "CIDRs Merger & Excluder | IP InBrowser.App",
   meta: [
     {
       name: "description",
