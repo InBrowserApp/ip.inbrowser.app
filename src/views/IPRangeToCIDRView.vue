@@ -1,13 +1,19 @@
 <template>
   <main>
     <BackToHome />
-    <n-h2 prefix="bar" align-text>IP Range to CIDR</n-h2>
+    <n-h2 prefix="bar" align-text>IP Range to CIDR Converter</n-h2>
+    <n-p>
+      This tool converts IP ranges to CIDR notation, supporting both IPv4 and
+      IPv6 addresses. Enter the IP range and get the CIDR notation within real
+      time. Ideal for making network management tasks easier.
+    </n-p>
+
     <IPRangeToCIDR />
   </main>
 </template>
 
 <script setup lang="ts">
-import { NH2 } from "naive-ui";
+import { NH2, NP } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
 import IPRangeToCIDR from "@/components/tools/ip-range-to-cidr/IPRangeToCIDR.vue";
@@ -17,7 +23,8 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "IP Range to CIDR. IPv4 & IPv6 supported.",
+      content:
+        "This tool converts IP ranges to CIDR notation, supporting both IPv4 and IPv6 addresses. Enter the IP range and get the CIDR notation within real time. Ideal for making network management tasks easier.",
     },
   ],
   link: [
