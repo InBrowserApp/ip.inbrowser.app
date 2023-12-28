@@ -9,14 +9,17 @@ import { computed } from "vue";
 import { macAddressToIPv6LinkLocalAddress } from "@/utils/mac";
 
 const props = defineProps<{
-  mac: string | undefined;
+  mac: string;
+  networkInterface: string;
 }>();
 
 const ipv6LinkLocalAddress = computed(() => {
-  if (props.mac === undefined) {
-    return undefined;
-  } else {
-    return macAddressToIPv6LinkLocalAddress(props.mac);
+  let address = macAddressToIPv6LinkLocalAddress(props.mac);
+
+  if (props.networkInterface !== "") {
+    address += `%${props.networkInterface}`;
   }
+
+  return address;
 });
 </script>

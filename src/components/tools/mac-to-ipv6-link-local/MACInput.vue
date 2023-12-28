@@ -1,6 +1,9 @@
 <template>
-  <n-form-item label="MAC" :rule="rule" :show-label="false">
+  <n-form-item label="MAC" :rule="rule">
     <n-input v-model:value="mac" placeholder="00-B0-D0-63-C2-26" />
+  </n-form-item>
+  <n-form-item label="Network Interface">
+    <n-input v-model:value="networkInterface" placeholder="eth0" />
   </n-form-item>
 </template>
 
@@ -10,7 +13,8 @@ import { ref, watch } from "vue";
 import { isValidMacAddress } from "@/utils/mac";
 
 const mac = ref("");
-const emit = defineEmits(["update:mac"]);
+const networkInterface = ref("");
+const emit = defineEmits(["update:mac", "update:networkInterface"]);
 
 const rule: FormItemRule = {
   trigger: ["input", "change", "blur"],
@@ -27,5 +31,9 @@ watch(mac, (value: string) => {
   } else {
     emit("update:mac", "");
   }
+});
+
+watch(networkInterface, (value: string) => {
+  emit("update:networkInterface", value);
 });
 </script>
