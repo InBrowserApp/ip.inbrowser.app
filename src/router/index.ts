@@ -7,6 +7,7 @@ import CIDRParseView from "@/views/CIDRParseView.vue";
 import CIDRMergeExcludeView from "@/views/CIDRMergeExcludeView.vue";
 import IPRangeToCIDRView from "@/views/IPRangeToCIDRView.vue";
 import IPCIDRNormalizeView from "@/views/IPCIDRNormalizeView.vue";
+import MACToIPv6LinkLocalVue from "@/views/MACToIPv6LinkLocal.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,7 +64,14 @@ const router = createRouter({
         keepAlive: true,
       },
     },
-
+    {
+      path: "/tools/mac-to-ipv6-link-local",
+      name: "mac-to-ipv6-link-local",
+      component: MACToIPv6LinkLocalVue,
+      meta: {
+        keepAlive: true,
+      },
+    },
     // catch all
     {
       path: "/:pathMatch(.*)*",

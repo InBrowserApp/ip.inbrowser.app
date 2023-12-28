@@ -50,6 +50,18 @@
           IP/CIDR Normalizer
         </n-button>
       </router-link>
+      <router-link
+        to="/tools/mac-to-ipv6-link-local"
+        #="{ navigate, href }"
+        custom
+      >
+        <n-button tag="a" :href="href" @click="navigate" text>
+          <template #icon>
+            <n-icon :component="ArrowStepInRight24Regular" />
+          </template>
+          MAC address to IPv6 Link Local Address Converter
+        </n-button>
+      </router-link>
     </n-space>
   </main>
 </template>
@@ -63,6 +75,7 @@ import {
   Merge24Regular,
   ArrowAutofitWidth20Regular,
   TextGrammarCheckmark20Regular,
+  ArrowStepInRight24Regular,
 } from "@vicons/fluent";
 import { useHead } from "@vueuse/head";
 
