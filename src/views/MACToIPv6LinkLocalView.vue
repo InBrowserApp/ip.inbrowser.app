@@ -5,6 +5,7 @@
       MAC address to IPv6 Link Local Address Converter
     </n-h2>
     <n-p> This tool converts a MAC address to an IPv6 link local address. </n-p>
+    <MACToIPv6LinkLocal />
   </main>
 </template>
 
@@ -12,6 +13,7 @@
 import { NH2, NP } from "naive-ui";
 import { useHead } from "@vueuse/head";
 import BackToHome from "@/components/misc/BackToHome.vue";
+import MACToIPv6LinkLocal from "@/components/tools/mac-to-ipv6-link-local/MACToIPv6LinkLocal.vue";
 
 useHead({
   title: "MAC address to IPv6 Link Local Address Converter | IP InBrowser.App",
